@@ -85,7 +85,7 @@ function App() {
     return (
         <div className="bg-background text-text font-inter min-w-full min-h-full">
             <h1 className="text-4xl text-text font-semibold py-2 md:px-12 px-4">
-                <a href="/">
+                <a href="/OSTify/">
                     <span className="color-effect">ost</span>
                     ify
                 </a>
