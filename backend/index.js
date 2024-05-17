@@ -10,19 +10,6 @@ var client_id = process.env.CLIENT_ID; // your clientId
 var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri = "http://localhost:8080/callback"; // Your redirect uri
 
-var scopes = [
-    "ugc-image-upload",
-    "playlist-read-private",
-    "playlist-read-collaborative",
-    "playlist-modify-private",
-    "playlist-modify-public",
-    "user-top-read",
-    "user-read-recently-played",
-    "user-library-modify",
-    "user-library-read",
-    "user-read-email",
-];
-
 const generateRandomString = (length) => {
     return crypto.randomBytes(60).toString("hex").slice(0, length);
 };

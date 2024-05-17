@@ -1,59 +1,39 @@
-import { useEffect, useState } from "react";
-
 const BookCard = ({ book, setSelectedBook }) => {
-    const [bookCover, setBookCover] = useState(
-        book.volumeInfo.imageLinks.thumbnail
-    );
-
-    // useEffect(() => {
-    //     const isbn = book?.isbn?.filter((isbn) => {
-    //         // Check if the ISBN is 13 digits long and starts with 978 or 979
-    //         return (
-    //             isbn.length === 13 &&
-    //             (isbn.startsWith("978") || isbn.startsWith("979"))
-    //         );
-    //     })[0];
-
-    //     const apiUrl = `http://bookcover.longitood.com/bookcover/${isbn}`;
-
-    //     // Make a request to the API endpoint
-    //     fetch(apiUrl)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             // Check if a cover is found
-    //             if (data.url) {
-    //                 // Once cover is found, break out of the loop
-    //                 setBookCover(data.url);
-    //             }
-    //         })
-    //         .catch((err) => {
-    //             const mute = err;
-    //         });
-    // });
-
     return (
         <div
             onClick={() => {
                 console.log("setting book:" + book.volumeInfo.title);
                 setSelectedBook(book);
             }}
-            className="bg-primary/30 dark:bg-dark-primary/30 flex flex-row p-4 m-4 rounded-md"
+            className="flex flex-row m-4 max-w-[80vw] hover:cursor-pointer hover:scale-[103%] transition duration-150 ease-in-out"
         >
             <img
-                className="w-1/5 h-auto mr-4"
-                src={book.volumeInfo.imageLinks.thumbnail}
+                className="md:w-[10vh] w-[5vh] mr-4"
+                src={
+                    book.volumeInfo.imageLinks
+                        ? book.volumeInfo.imageLinks.thumbnail
+                        : "https://www.arlanandrews.com/wp-content/uploads/2020/10/book-cover-generic.jpg"
+                }
+                onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src =
+                        "https://www.arlanandrews.com/wp-content/uploads/2020/10/book-cover-generic.jpg";
+                }}
             />
-            <div className="text-left w-4/5">
-                <span className="font-bold text-large">
+            <div className="text-left overflow-hidden">
+                <p className="font-bold md:text-xl text-lg truncate">
                     {book.volumeInfo.title}
-                </span>
+                </p>
                 {book.volumeInfo.authors && (
-                    <p className="truncate">
+                    <p className="truncate text-primary text-ellipsis">
                         {book.volumeInfo.authors.join(", ")}
                     </p>
                 )}
-                <p>{book.volumeInfo.publishedDate}</p>
-                {/* {book.subject && <p>Description: {book.subject}</p>} */}
+                {book.volumeInfo.publishedDate && (
+                    <p className="text-primary">
+                        {book.volumeInfo.publishedDate}
+                    </p>
+                )}
             </div>
         </div>
     );

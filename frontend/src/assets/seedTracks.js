@@ -208,6 +208,19 @@ export const genre_seeds = {
         "0c7Q0bSZ3sVqW4Dy0LgaA9", //ea535db3d3244881",
     ],
 
+    "Manga Comic": [
+        // "Rain" by Joe Hisaishi (from the Studio Ghibli film "Kikujiro")
+        "39uLYYZytVUwcjgeYLI409", //fc0281314e274862",
+        // "Aria di Mezzo Carattere" by Nobuo Uematsu (from the video game "Final Fantasy VI")
+        "4c28kygVhhpacEHorsU04R", //5079b2700c454832",
+        // "Still Alive" by Jonathan Coulton (from the video game "Portal")
+        "3xxJzVRKmYegGC35JIwsow", //b26a0b8466804f4a",
+        // "The Hero" by JAM Project (from the anime "One Punch Man")
+        "4YycgLIc3P6oQRY5NiOybl", //1304d6b6bbff4fc7",
+        // "Tank!" by The Seatbelts (Cowboy Bebop soundtrack)
+        "2Wi5ubKr8zSk8L3CLemyS4", //2ff6303a404d47c8",
+    ],
+
     // "Contemporary Fiction": [
     //     // "Electric Feel" by MGMT (instrumental version)
     //     "53iQESoQpaL4SvxEd5bpAc", //1be3b0fa961649eb",

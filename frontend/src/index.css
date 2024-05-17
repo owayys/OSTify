@@ -10,4 +10,14 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
+    overflow-x: hidden;
+}
+
+.color-effect {
+    --primary: #dbae98;
+    --accent: #e36c32;
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
