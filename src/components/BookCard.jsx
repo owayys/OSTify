@@ -5,7 +5,7 @@ const BookCard = ({ book, setSelectedBook }) => {
                 console.log("setting book:" + book.volumeInfo.title);
                 setSelectedBook(book);
             }}
-            className="flex flex-row m-4 max-w-[80vw] hover:cursor-pointer hover:scale-[103%] transition duration-150 ease-in-out"
+            className="flex flex-row m-4 max-w-[80vw] hover:cursor-pointer hover:scale-[101%] transition duration-150 ease-in-out"
         >
             <img
                 className="md:w-[10vh] w-[5vh] mr-4"
