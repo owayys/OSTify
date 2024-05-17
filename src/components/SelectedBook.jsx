@@ -28,7 +28,7 @@ const SelectedBook = ({
                 />
                 <div className="text-left w-4/5 flex flex-col justify-between">
                     <div>
-                        <p className="font-bold md:text-3xl text-md truncate">
+                        <p className="font-bold md:text-3xl text-lg text-wrap truncate">
                             {book.volumeInfo.title.length > 50
                                 ? book.volumeInfo.title.slice(0, 50) + "..."
                                 : book.volumeInfo.title}
