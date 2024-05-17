@@ -21,3 +21,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.font-effect {
+    --text: #f4f1ef;
+    font-style: italic;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--text);
+    color: transparent;
+}

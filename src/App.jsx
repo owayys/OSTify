@@ -6,6 +6,7 @@ import "./index.css";
 import SelectedBook from "./components/SelectedBook";
 import { Spotify } from "react-spotify-embed";
 import { generateFlow } from "./utils/generateFlow";
+import { IoBookmarksOutline } from "react-icons/io5";
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -92,12 +93,24 @@ function App() {
             </h1>
             <hr className="border-primary/15 border-y-1"></hr>
             {!loggedIn && (
-                <div className="w-full flex text-center">
+                <div className="md:w-1/2 w-[80vw] flex md:flex-row flex-col md:mt-24 mt-12 text-center my-auto m-auto align-middle gap-8">
+                    <span className="font-black text-text md:text-7xl text-5xl">
+                        <p className="my-4 w-full text-left color-effect">
+                            Soundtrack
+                        </p>
+                        <p className="my-4 w-full text-left italic font-effect">
+                            to your
+                        </p>
+                        <p className="my-4 w-full text-left flex flex-row gap-4">
+                            Reading
+                            <IoBookmarksOutline />
+                        </p>
+                    </span>
                     <a
                         href="https://nervous-clam-drawers.cyclic.app/login"
-                        className="bg-[#1DB954] p-4 rounded-md m-auto my-12"
+                        className="bg-primary p-4 rounded-md m-auto my-auto h-fit align-middle flex items-center text-background font-semibold hover:scale-[103%] transition duration-200 ease-in-out"
                     >
-                        Login to Spotify
+                        Login with Spotify
                     </a>
                 </div>
             )}
