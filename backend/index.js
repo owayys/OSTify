@@ -8,7 +8,7 @@ require("dotenv").config();
 
 var client_id = process.env.CLIENT_ID; // your clientId
 var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = "http://localhost:8080/callback"; // Your redirect uri
+var redirect_uri = "https://vast-dog-apron.cyclic.app/callback"; // Your redirect uri
 
 const generateRandomString = (length) => {
     return crypto.randomBytes(60).toString("hex").slice(0, length);
@@ -142,6 +142,12 @@ app.get("/refresh_token", function (req, res) {
     });
 });
 
-app.listen(8080, () => {
-    console.log("Server is running on port 8080");
+app.get("/", function (req, res) {
+    res.send("OSTify backend");
+});
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
