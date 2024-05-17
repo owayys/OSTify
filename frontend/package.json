@@ -1,5 +1,6 @@
 {
     "name": "ostify",
+    "homepage": "https://owayys.github.io/OSTify",
     "private": true,
     "version": "0.0.0",
     "type": "module",
