@@ -11,7 +11,7 @@ const BookSearch = ({ setSelectedBook }) => {
     const handleSearch = async () => {
         try {
             const response = await fetch(
-                `https://www.googleapis.com/books/v1/volumes?q=${query}&limit=5`
+                `https://www.googleapis.com/books/v1/volumes?q=${query}&limit=5&langRestrict=en`
             );
             const data = await response.json();
             console.log(data.items);
