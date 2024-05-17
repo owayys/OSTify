@@ -12,7 +12,7 @@ const spotifyApi = new SpotifyWebApi();
 const fetchNewAccessToken = async (refreshToken) => {
     try {
         const response = await fetch(
-            `http://localhost:8080/refresh_token?refresh_token=${refreshToken}`
+            `https://nervous-clam-drawers.cyclic.app/refresh_token?refresh_token=${refreshToken}`
         );
         const data = await response.json();
         const tokens = {
@@ -94,7 +94,7 @@ function App() {
             {!loggedIn && (
                 <div className="w-full flex text-center">
                     <a
-                        href="http://localhost:8080/login"
+                        href="https://nervous-clam-drawers.cyclic.app/login"
                         className="bg-[#1DB954] p-4 rounded-md m-auto my-12"
                     >
                         Login to Spotify
