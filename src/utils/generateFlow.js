@@ -64,11 +64,13 @@ export const generateFlow = async (
     }
 
     const book_embedding = await generateEmbeddings(
-        `${book.volumeInfo.title} ${book.volumeInfo.authors} ${
-            book.volumeInfo.description
-        } ${book.volumeInfo.categories.join(" ")} ${data.docs[0].subject.join(
+        `${book.volumeInfo?.title} ${book.volumeInfo?.authors} ${
+            book.volumeInfo?.description
+        } ${book.volumeInfo?.categories?.join(
             " "
-        )} ${data.docs[0].subject_facet.join(" ")}`,
+        )} ${data?.docs[0]?.subject?.join(
+            " "
+        )} ${data?.docs[0]?.subject_facet?.join(" ")}`,
         {
             pooling: "mean",
             normalize: true,
