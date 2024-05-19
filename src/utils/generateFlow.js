@@ -22,7 +22,7 @@ export const generateFlow = async (
     let top_track_features = [];
 
     spotifyApi
-        .getMyTopTracks({ limit: 20, time_range: "long_term" })
+        .getMyTopTracks({ limit: 50, time_range: "medium_term" })
         .then((response) => {
             spotifyApi
                 .getAudioFeaturesForTracks(
@@ -134,19 +134,21 @@ export const generateFlow = async (
 
     spotifyApi
         .getRecommendations({
-            seed_tracks: seed_tracks,
-            target_acousticness: top_track_features.acousticness.mean,
-            target_energy: top_track_features.energy.mean,
+            seed_tracks: seed_tracks || [],
+            target_acousticness: top_track_features.acousticness.mean || 0.3,
+            target_energy: top_track_features.energy.mean || 0.3,
             target_instrumentalness:
                 top_track_features.instrumentalness.mean +
-                top_track_features.instrumentalness.standardDeviation / 2,
-            target_danceability: top_track_features.danceability.mean,
+                    top_track_features.instrumentalness.standardDeviation / 2 ||
+                0.7,
+            target_danceability: top_track_features.danceability.mean || 0.3,
             target_speechiness:
                 top_track_features.speechiness.mean -
-                top_track_features.speechiness.standardDeviation / 2,
-            target_loudness: top_track_features.loudness.mean,
-            target_tempo: top_track_features.tempo.mean,
-            target_valence: top_track_features.valence.mean,
+                    top_track_features.speechiness.standardDeviation / 2 ||
+                0.15,
+            target_loudness: top_track_features.loudness.mean || 0.3,
+            target_tempo: top_track_features.tempo.mean || 80,
+            target_valence: top_track_features.valence.mean || 0.5,
         })
         .then((response) => {
             console.log(response);
