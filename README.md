@@ -4,6 +4,12 @@ OSTify is a React application that allows users to generate Spotify playlists ba
 
 ## Installation
 
+Clone the project using:
+
+```sh
+git clone https://github.com/owayys/OSTify.git
+```
+
 To install the dependencies, run the following command:
 
 ```sh
