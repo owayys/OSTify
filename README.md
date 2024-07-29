@@ -1,5 +1,5 @@
-> [!NOTE]  
-> It is not possible to currently use this, unless I manually whitelist your spotify account. A [quota extension](https://developer.spotify.com/documentation/web-api/concepts/quota-modes) request has been submitted and I am awaiting response from Spotify.
+> [!IMPORTANT]  
+> Due to the shutdown of the hosting provider, the OSTify backend is currently offline.
 
 # OSTify
 
